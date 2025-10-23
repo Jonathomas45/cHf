@@ -1,0 +1,36 @@
+Modules used: Pandas
+
+Todo:
+-10/4/2025 There are repeading recipes evidence: "meal_names.csv"
+***************************
+
+
+
+
+Lines 4-14 
+=============================
+Path = Location of recipe data 
+df = pandas dataframe of path's data 
+recipes = list of the individual recipes
+Headers = list of the keys to the dicts from recipes
+    Headers.txt ->
+        0: recipe_name
+        1: prep_time
+        2: cook_time
+        3: total_time
+        4: servings
+        5: yield
+        6: ingredients
+        7: directions
+        8: rating
+        9: url
+        10: cuisine_path
+        11: nutrition
+        12: timing
+        13: img_src
+    
+==============================
+Lines 17-25
+==============================
+...
+==============================
