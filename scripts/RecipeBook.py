@@ -1,7 +1,6 @@
 import pandas as pd
 from scripts.Style import Cleanup
 
-
 # Declares path to location of "recipes.csv"
 path = "datasets/recipes.csv"
 # Pulls data from path location and makes it into a pandas dataframe
@@ -16,12 +15,10 @@ headers = pd.read_csv(path, nrows=0).columns.tolist()
 #(no longer) Removes the unnecessary unnamed list item -- learned that the first empty comma is for indexing
 #headers.pop(0)
 
-#length of recipes list
-quan = len(recipes) 
 i = 0
 # Temp initiation of list for the meal names.
 meal_names = []
-while i < quan:
+while i < len(recipes):
     meal = recipes[i]['recipe_name']
     meal_names.append(meal)
     i += 1
