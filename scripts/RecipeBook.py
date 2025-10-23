@@ -1,5 +1,5 @@
 import pandas as pd
-from Style import Cleanup
+from scripts.Style import Cleanup
 
 
 # Declares path to location of "recipes.csv"
@@ -28,7 +28,7 @@ while i < quan:
 
 df = pd.DataFrame(meal_names, columns=["recipe_name"])
 df.drop_duplicates(subset="recipe_name", keep="first")
-df.to_csv("datasets/meal_names.csv", index=True)
+df.to_csv("datasets/meal_names.csv", index=False)
 
 class Structure:
     '''
@@ -46,7 +46,7 @@ class Structure:
             uses string of recipe_name variable to validate it and index it from meal_names. 
         
         '''
-        
+    
         self.intro_view = [headers[0],headers[3],headers[6], headers[11]]
         self.recipe_name = recipe_name
         self.validate()
@@ -80,9 +80,9 @@ class Structure:
 
         self.index = index
         for header in self.intro_view:
-            string = recipes[index][header]
+            string = str(recipes[index][header])
             if header in "ingredients nutrition":
-                string = recipes[index][header]
+                
                 Cleanup.indent(header, string)
             else:
                 print(header.capitalize()+': '+ string.center(50, '='))

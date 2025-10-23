@@ -1,3 +1,5 @@
-from RecipeBook import Structure
+from scripts.RecipeBook import Structure
 
-Structure("Apple Turnovers")
+Structure("Apple-Cranberry Crostada")
+            
+

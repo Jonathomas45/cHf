@@ -1,4 +1,4 @@
-from RecipeBook import *
+from scripts.RecipeBook import *
 
 
 
