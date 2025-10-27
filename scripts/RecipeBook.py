@@ -1,5 +1,5 @@
 import pandas as pd
-from scripts.Style import Cleanup
+from Style import Cleanup
 
 # Declares path to location of "recipes.csv"
 path = "datasets/recipes.csv"

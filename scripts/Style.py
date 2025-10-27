@@ -6,7 +6,7 @@ exempt = [
 
 
 #ennumerating ingredients & nutrition
-class Cleanup():
+class Cleanup:
 
     def indent(header, string):
         """
