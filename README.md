@@ -1,11 +1,10 @@
 BRANCHES
 
-Main:              
-
+cHf_v1:              
 is code that was written when first messing around the data set for recipes.csv was used to form views of the data a recipe at a time. This was also used to get a list of recipe names
-                    DATACOMM- is the exploration of SQL communication to talk with a Mysql server and keeping that as the main source to draw data from for quaries on the recipes.
+DATACOMM- is the exploration of SQL communication to talk with a Mysql server and keeping that as the main source to draw data from for quaries on the recipes.
 
-DataCOMM update:    
+main:    
 
 This is an improved form of the main code for DATACOMM include some working examples of that data
 
