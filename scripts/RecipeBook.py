@@ -1,5 +1,5 @@
 import pandas as pd
-from Style import Cleanup
+from scripts.Style import *
 
 # Declares path to location of "recipes.csv"
 path = "datasets/recipes.csv"
@@ -38,28 +38,28 @@ class Structure:
     Readable as a presenation 
     '''
     
-    def __init__(self, recipe_name):
+    def __init__(self, recipe_name: str = None):
         '''
             uses string of recipe_name variable to validate it and index it from meal_names. 
         
         '''
     
-        self.intro_view = [headers[0],headers[3],headers[6], headers[11]]
-        self.recipe_name = recipe_name
-        self.validate()
-      
-    def validate(self):
+        self.intro_view = [h for h in headers] #
+        self.recipe_name = recipe_name 
+    
         if self.recipe_name in meal_names:
-            meal_index =meal_names.index(self.recipe_name)
-            self.snap(self.recipe_name, meal_index)
-            #print("this is validate")
-            self.display(meal_index)
-
+            try:
+                self.meal_index = meal_names.index(self.recipe_name)
+                self.snap(self.recipe_name, self.meal_index)
+                self.display()
+            except AttributeError:
+                print(f"The meal index is: {self.meal_index}")
            
         else:
             print(self.recipe_name +" is not in our recipe book")
+            
         
-        
+       
     def snap(self,name, index):
         self.name = name
         self.index = index
@@ -68,17 +68,17 @@ class Structure:
         
      
 
-    def display(self, index):
+    def display(self):
         '''
         The display function captures the intro_view list of headers to display
         a readable description of the recipe. 
         '''
       
 
-        self.index = index
+        
         for header in self.intro_view:
-            string = str(recipes[index][header])
-            if header in "ingredients nutrition":
+            string = str(recipes[self.meal_index][header])
+            if header in "ingredients nutrition directions timing":
                 
                 Cleanup.indent(header, string)
             else:

@@ -1,0 +1,14 @@
+Imports: re 
+
+
+Stylisticly changes the formation of the strings for the nutrition, ingredients, and directions. 
+
+exempt = a list of keywords to break to the next like of instructions/directions
+
+func: Indent lines 11-25 
+    Indent (if) is for directions which separates it by period and then structres it to display with steps on each line. simple to read. 
+    Indent (else) is use for nutrition and ingredients that splits the sting into lines and seprates them by comma. 
+
+
+
+

@@ -1,0 +1,28 @@
+
+# Example of code and output as of 11/10/2025
+Code:
+headers = ['id',"col3",'name']
+
+
+main = DB("test").Table("TESTTABLE")
+main.categorize(f"{headers[0]},{headers[1]}")
+
+          
+ShowDBs()
+
+___________________________________________________
+Output:
+
+What is your password for test:***** --> this will be * despite what you type
+Connected to database: test --> keep for debugging
+('id', 'col3')________________________________________
+[(1, None), (2, None), (3, None), (12, None)]         \__________________> matplotlib
+db_nutrition
+db_recipebook
+information_schema
+mysql
+new_schema
+performance_schema
+test
+
+___________________________________________________

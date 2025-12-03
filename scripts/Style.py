@@ -1,7 +1,7 @@
 import re
 exempt = [
     "sliced", "diced", 'peeled', 'cored', 'melted', "thawed", 
-    "quartered", "lightly", "beaten","chopped"
+    "quartered", "lightly", "beaten", "chopped", "drained", "divided", "thinly"
     ]
 
 
@@ -12,11 +12,17 @@ class Cleanup:
         """
             Uses the string of a header and styles it to be indented for every next item.
         """
-        pattern = r",\s*(?=(" + "|".join(re.escape(word) for word in exempt) + r"))"
-        cleaned = re.sub(pattern, " ", string)
-        final = re.sub(r",\s*", "\n\t", cleaned)
         hl = header.capitalize()
-        print(f"{hl}: \n\t{final}")
+        if header == 'directions':
+            st = string.replace("\n", '').split('.')
+            print(f"{hl}:")
+            for s in st:
+                print(f'\t Step {st.index(s)+1}. {s}.')
+        else:
+            pattern = r",\s*(?=(" + "|".join(re.escape(word) for word in exempt) + r"))"
+            cleaned = re.sub(pattern, " ", string)
+            final = re.sub(r",\s*", "\n\t", cleaned)
+            print(f"{hl}: \n\t{final}")
 
 
 
@@ -24,7 +30,7 @@ class Cleanup:
 
         
 
-# 
+
 
 
 
